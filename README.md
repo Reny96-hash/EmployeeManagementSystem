@@ -1,4 +1,4 @@
-**Employee Management System Overview:The employee management system is designed to help users efficiently manage their tasks and responsibilities by providing a user-friendly interface for creating, viewing, updating, and deleting tasks. It includes essential features such as secure user authentication, as well as managing the employee profile. With built-in validation such as input field validation and email validation, the application ensures a seamless user experience while enhancing productivity and organization in both personal and professional settings. **
+**Employee Management System Overview:The employee management system is designed to help admin efficiently manage the employee details by providing a user-friendly interface for creating, viewing, updating, and deleting. It includes essential features such as secure user authentication, as well as managing the employee profile. With built-in validation such as input field validation and email validation, the application ensures a seamless user experience while enhancing productivity and organization in both personal and professional settings. **
 
 **This apps **contain** the following features:**
 
