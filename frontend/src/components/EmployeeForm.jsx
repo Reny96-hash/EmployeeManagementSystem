@@ -10,6 +10,7 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
     department: '',
     salary: ''
   });
+  const [error, setError] = useState(null);
 
   // If we're editing an employee, fill the form with their data
   useEffect(() => {
@@ -33,6 +34,7 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null); // Reset error state before submitting
 
     try {
       if (editingEmployee) {
@@ -54,7 +56,8 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
       setEditingEmployee(null); // Reset editing state
       setFormData({ name: '', email: '', department: '', salary: '' }); // Reset form
     } catch (error) {
-      alert('Failed to save employee.');
+      console.error('Error saving employee:', error.response || error.message);
+      setError(error.response ? error.response.data.message : 'Failed to save employee.');
     }
   };
 
@@ -63,6 +66,8 @@ const EmployeeForm = ({ employees, setEmployees, editingEmployee, setEditingEmpl
       <h1 className="text-2xl font-bold mb-4">
         {editingEmployee ? 'Edit Employee' : 'Create Employee'}
       </h1>
+
+      {error && <p className="text-red-500 mb-4">{error}</p>} {/* Display error message if it exists */}
 
       <input
         type="text"
